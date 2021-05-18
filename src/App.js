@@ -18,6 +18,7 @@ function App() {
             alt="logo"
             height="30"
             width="30"
+            // d- display ;inline-block allows to set heigth and width, but inline take div's width and allow to override
             className="d-inline-block align-bottom me-1"
           ></img>
           Internet World
