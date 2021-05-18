@@ -12,7 +12,7 @@ function App() {
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-primary">
       <div className="container">
-        <a href="/home" className="navbar-brand">
+        <a href="/home" className="navbar-brand ">
           <img
             src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
             alt="logo"
