@@ -1,19 +1,24 @@
 import "./App.css";
 import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [isCollapsed, setCollapse] = useState(true);
   const [flag, setFlag] = useState(true);
+  const [is_dp_collapsed, set_dp_collapsed] = useState(true);
   const onCollapseHandler = () => {
     setCollapse(!isCollapsed);
     setFlag(!flag);
+  };
+  const onDropDownCollapsedHandler = (e) => {
+    e.preventDefault();
+    set_dp_collapsed(!is_dp_collapsed);
+    console.log(is_dp_collapsed);
   };
   return (
     <div>
       <nav className="navbar navbar-expand-lg  navbar-dark bg-primary">
         <div className="container">
-          <a href="/home" className="navbar-brand ">
+          <a href="/home" className="navbar-brand">
             <img
               src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg"
               alt="logo"
@@ -43,32 +48,80 @@ function App() {
             <input type="text" className="form-control mt-2" />
             <button
               className={`${
-                flag ? "ms-2" : "mt-2"
+                flag ? "ms-2" : "mt-2 navbar-divider"
               }  btn btn-outline-light btn-sm`}
             >
               Search
             </button>
-            {/* if bootstrap4 use ml(margin-left)-auto, ms(start) in bootstrap-5 for right align */}
+            {/*
+            Notes:
+            ------- 
+            if bootstrap4 use ml(margin-left)-auto, ms(start) in bootstrap-5 for right align
+             */}
             <ul className="navbar-nav ms-auto">
               <li className="navbar-item">
                 <a href="/home" className="nav-link active">
                   Home
                 </a>
               </li>
-              <li className="navbar-item">
+              <li className="nav-item">
                 <a href="/home" className="nav-link">
                   About
                 </a>
               </li>
-              <li className="navbar-item">
+              <li className="nav-item">
                 <a href="/home" className="nav-link">
                   blog
                 </a>
               </li>
-              <li className="navbar-item">
+              <li className="nav-item">
                 <a href="/home" className="nav-link">
-                  contact
+                  Contact
                 </a>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  onClick={onDropDownCollapsedHandler}
+                  href="/channel"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded={!is_dp_collapsed ? true : false}
+                >
+                  Channels
+                </a>
+
+                {/* 
+                
+                Notes:
+                -----
+                _________________________________________________________________________________________
+                if use <a> for dropdown it moves url so browser reload so 'drop-items' does hide or show.
+                so add 'preventdefault() in function to stop event
+                                       (or)
+                                       
+                use 'button' instead of <a> <button className="btn btn-primary-link"> 
+                -----------------------------------------------------------------------------------------
+                add 'show' so that able to view dropdown list in react-js
+                __________________________________________________________________________________________
+                */}
+
+                <ul
+                  className={`dropdown-menu ${is_dp_collapsed ? "show" : ""}`}
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li className="dropdown-item">
+                    <a href="/github">GitHub</a>
+                  </li>
+                  <li className="dropdown-item">
+                    <a href="/facebook">Facebook</a>
+                  </li>
+                  <li className="dropdown-divider"></li>
+                  <li className="dropdown-item">
+                    <a href="/slack">Slack</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
