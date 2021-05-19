@@ -3,16 +3,13 @@ import { useState } from "react";
 
 function App() {
   const [isCollapsed, setCollapse] = useState(true);
-  const [flag, setFlag] = useState(true);
-  const [is_dp_collapsed, set_dp_collapsed] = useState(true);
+  const [isDropDowned, setDropDowned] = useState(true);
   const onCollapseHandler = () => {
     setCollapse(!isCollapsed);
-    setFlag(!flag);
   };
   const onDropDownCollapsedHandler = (e) => {
     e.preventDefault();
-    set_dp_collapsed(!is_dp_collapsed);
-    console.log(is_dp_collapsed);
+    setDropDowned(!isDropDowned);
   };
   return (
     <div>
@@ -45,10 +42,10 @@ function App() {
             className={`${isCollapsed ? "collapse" : ""} navbar-collapse`}
             id="navbarSupportedContent"
           >
-            <input type="text" className="form-control mt-2" />
+            <input type="text" className={`form-control ${isCollapsed? 'me-2': 'mt-2'}`} />
             <button
               className={`${
-                flag ? "ms-2" : "mt-2 navbar-divider"
+                isCollapsed ? "" : "mt-2"
               }  btn btn-outline-light btn-sm`}
             >
               Search
@@ -87,7 +84,7 @@ function App() {
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded={!is_dp_collapsed ? true : false}
+                  aria-expanded={!isDropDowned ? true : false}
                 >
                   Channels
                 </a>
@@ -108,18 +105,19 @@ function App() {
                 */}
 
                 <ul
-                  className={`dropdown-menu ${is_dp_collapsed ? "show" : ""}`}
+                  className={`dropdown-menu ${isDropDowned ? "" : "show"} bg-light`}
                   aria-labelledby="navbarDropdown"
                 >
-                  <li className="dropdown-item">
-                    <a href="/github">GitHub</a>
+                  <li className="dropdown-item ">
+                    <a href="/github" className="text-decoration-none">GitHub</a>
                   </li>
-                  <li className="dropdown-item">
-                    <a href="/facebook">Facebook</a>
+                  <li className="dropdown-divider"></li>
+                  <li className="dropdown-item ">
+                    <a href="/facebook" className="text-decoration-none">Facebook</a>
                   </li>
                   <li className="dropdown-divider"></li>
                   <li className="dropdown-item">
-                    <a href="/slack">Slack</a>
+                    <a href="/slack" className="text-decoration-none">Slack</a>
                   </li>
                 </ul>
               </li>
