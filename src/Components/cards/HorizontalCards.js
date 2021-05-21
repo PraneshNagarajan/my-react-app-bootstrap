@@ -1,3 +1,5 @@
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faDesktop, faTag} from '@fortawesome/free-solid-svg-icons'
 const HorizontalCards = () => {
   return (
     <div className="container p-5">
@@ -14,20 +16,20 @@ const HorizontalCards = () => {
           <div className="col-8">
             <div className="card-body">
               <h4 className="card-title">
-                Bootstrap-5 Course Released!{" "}
+                Bootstrap-5 Course Released!
                 <span className="badge bg-primary">New</span>
               </h4>
               <div className=" card-text my-2">
                 <p className="badge rounded-pill bg-success  me-1">
-                  {" "}
+                  <FontAwesomeIcon className="me-1" icon={faDesktop}></FontAwesomeIcon>
                   Web-development
                 </p>
                 <p
                   className="badge rounded-pill ms-1"
                   style={{ background: `#8000ff` }}
                 >
-                  {" "}
-                  Bootstrap
+                  <FontAwesomeIcon className="me-1" icon={faTag}></FontAwesomeIcon>
+                   Bootstrap
                 </p>
               </div>
               <p className="card-text">
@@ -36,12 +38,13 @@ const HorizontalCards = () => {
                 scratch. It is for Begineers and Experienced. It will help you
                 create websites within few minutes.
               </p>
-              <p className="text-muted float-end">
-                {" "}
+              {/* use 'text-end' or float-right */}
+              <p className="text-muted text-end">
+                
                 Last updated 3 minutes ago!
               </p>
               <button type="button" className="btn  w-100 text-white" style={{ background: `#8000ff` }}>
-                {" "}
+                
                 Read More
               </button>
             </div>
