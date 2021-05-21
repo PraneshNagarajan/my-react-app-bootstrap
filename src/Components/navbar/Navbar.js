@@ -3,10 +3,10 @@ const Navbar = (props) => {
   const [isCollapsed, setCollapse] = useState(true);
   const [isDropDowned, setDropDowned] = useState(true);
   const [isActive, setActive] = useState({
-    home: props.mainpage === 'home'? true: false,
-    courses: props.mainpage === 'course'? true: false,
-    blog: props.mainpage === 'blog'? true: false,
-    contact: props.mainpage === 'contact'? true: false,
+    home: props.mainpage === "home" ? true : false,
+    courses: props.mainpage === "course" ? true : false,
+    blog: props.mainpage === "blog" ? true : false,
+    contact: props.mainpage === "contact" ? true : false,
   });
   const onCollapseHandler = () => {
     setCollapse(!isCollapsed);
@@ -16,19 +16,12 @@ const Navbar = (props) => {
     setDropDowned(!isDropDowned);
   };
 
-  const onSetPage = (event,value) => {
-      event.preventDefault()
-      props.page(value)
-  }
-  const onActiveHandler = (event, fi, se, th, ft) => {
-    setActive({
-      home: fi ? true : false,
-      courses: se ? true : false,
-      blog: th ? true : false,
-      contact: ft ? true : false,
-    });
+  const onSetPage = (event, value) => {
+    event.preventDefault();
+    props.page(value);
+  };
 
-    /* 
+  /* 
     ___________________________________________________________________________________________________________________________
     Notes:
     -------
@@ -43,7 +36,6 @@ const Navbar = (props) => {
     2)whenever use a -tag browser move to that url which mention and reload to aviod or cancel event use preventhandler
     ____________________________________________________________________________________________________________________________
     */
-  }
 
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-primary">
@@ -96,7 +88,7 @@ const Navbar = (props) => {
               <a
                 href="/home"
                 className={`nav-link ${isActive.home ? "active" : ""}`}
-                onClick={(e) => onSetPage(e,'home')}
+                onClick={(e) => onSetPage(e, "home")}
               >
                 Home
               </a>
@@ -105,7 +97,7 @@ const Navbar = (props) => {
               <a
                 href="/Courses"
                 className={`nav-link ${isActive.courses ? "active" : ""}`}
-                onClick={(e) => onSetPage(e,'course')}
+                onClick={(e) => onSetPage(e, "course")}
               >
                 Courses
               </a>
@@ -114,8 +106,8 @@ const Navbar = (props) => {
               <a
                 href="/blog"
                 className={`nav-link ${isActive.blog ? "active" : ""}`}
-                onClick={(e) => onSetPage(e,'blog')}
-              > 
+                onClick={(e) => onSetPage(e, "blog")}
+              >
                 Blog
               </a>
             </li>
