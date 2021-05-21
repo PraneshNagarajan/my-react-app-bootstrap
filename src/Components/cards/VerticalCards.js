@@ -1,7 +1,6 @@
 const Cards = () => {
   return (
     <div className="container my-5">
-        <h4>Courses</h4>
       <div className="row">
         <div className="col-12 col-md-4">
           <div className="card my-3">

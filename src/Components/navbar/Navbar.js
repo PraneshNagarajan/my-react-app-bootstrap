@@ -114,16 +114,15 @@ const Navbar = (props) => {
               <a
                 href="/blog"
                 className={`nav-link ${isActive.blog ? "active" : ""}`}
-
-              >
-                blog
+                onClick={(e) => onSetPage(e,'blog')}
+              > 
+                Blog
               </a>
             </li>
             <li className="nav-item">
               <a
                 href="/contact"
                 className={`nav-link ${isActive.contact ? "active" : ""}`}
-                onClick={(e) => onActiveHandler(e, false, false, false,true)}
               >
                 Contact
               </a>

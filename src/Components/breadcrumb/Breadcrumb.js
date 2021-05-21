@@ -1,7 +1,11 @@
 const Breadcrumb = (props) => {
   return (
     <div className="container-fluid p-5 bg-light">
-      <nav aria-label="breadcrumb d-inline-block text-center">
+      <div className="px-5">
+      <h4>Learn Tech {props.pageName}</h4>
+      <p className="text-muted"> {props.content}</p>
+      </div>
+      <nav aria-label="breadcrumb">
         <ol className="breadcrumb px-5">
           <li className="breadcrumb-item">
             <a href="/home">Home</a>

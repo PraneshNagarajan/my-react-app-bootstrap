@@ -1,14 +1,17 @@
 import {useState} from 'react'
 import "./App.css";
-import Home from './pages/homepage'
-import Courses from './pages/coursepage'
+import HomePage from './pages/HomePage'
+import CoursePage from './pages/CoursePage'
+import BlogPage from './pages/BlogPage'
 function App() {
-  const [page, setPage] = useState(<Home page={(e) => onPageHandler(e)}> </Home>)
+  const [page, setPage] = useState(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)
   const onPageHandler = (value) =>{
     if( value === 'home') {
-      setPage(<Home page={(e) => onPageHandler(e)}> </Home>)
+      setPage(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)
+    } else if(value === 'course') {
+      setPage(<CoursePage page={(e) => onPageHandler(e)}> </CoursePage>)
     } else {
-      setPage(<Courses page={(e) => onPageHandler(e)}> </Courses>)
+      setPage(<BlogPage page={(e) => onPageHandler(e)}> </BlogPage>)
     }
 
   }  
