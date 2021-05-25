@@ -2,12 +2,12 @@ import { useState } from "react";
 const Navbar = (props) => {
   const [isCollapsed, setCollapse] = useState(true);
   const [isDropDowned, setDropDowned] = useState(true);
-  const [isActive, setActive] = useState({
+  const isActive = {
     home: props.mainpage === "home" ? true : false,
     courses: props.mainpage === "course" ? true : false,
     blog: props.mainpage === "blog" ? true : false,
-    contact: props.mainpage === "contact" ? true : false,
-  });
+    about: props.mainpage === "about" ? true : false,
+  };
   const onCollapseHandler = () => {
     setCollapse(!isCollapsed);
   };
@@ -113,10 +113,11 @@ const Navbar = (props) => {
             </li>
             <li className="nav-item">
               <a
-                href="/contact"
-                className={`nav-link ${isActive.contact ? "active" : ""}`}
+                href="/about"
+                className={`nav-link ${isActive.about ? "active" : ""}`}
+                onClick={(e) => onSetPage(e, "about")}
               >
-                Contact
+                About
               </a>
             </li>
             <li className="nav-item dropdown">
