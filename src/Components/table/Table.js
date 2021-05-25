@@ -1,6 +1,6 @@
 const Table = () => {
   return (
-    <div className="container-fluid p-5">
+    <div className="container-fluid px-5">
       <div className="table-responsive">
         <table className="table table-bordered table-striped table-hover text-center">
           <caption className="caption-top">
