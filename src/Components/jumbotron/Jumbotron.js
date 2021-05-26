@@ -1,3 +1,5 @@
+import DropBox from "../dropbox/DropBox";
+
 const Jumbotron = () => {
   return (
     /* Adding Jumbotron :
@@ -13,6 +15,7 @@ const Jumbotron = () => {
         good platform to start. We are trained more tha 2,50,000+ students and
         professonals last 15 years. Happy Learning.
       </p>
+      <DropBox/>
       <hr className="mt-5" />
     </div>
   );
