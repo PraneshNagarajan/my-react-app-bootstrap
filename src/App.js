@@ -4,8 +4,9 @@ import HomePage from './pages/HomePage'
 import CoursePage from './pages/CoursePage'
 import BlogPage from './pages/BlogPage'
 import AboutPage from './pages/AboutPage'
+import LoginPage from './pages/LoginPage'
 function App() {
-  const [page, setPage] = useState(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)
+  const [page, setPage] = useState(<LoginPage  page={(e) => onPageHandler(e)} ></LoginPage>)
   const onPageHandler = (value) =>{
     if( value === 'home') {
       setPage(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)

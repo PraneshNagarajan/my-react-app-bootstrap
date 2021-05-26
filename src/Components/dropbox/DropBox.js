@@ -7,6 +7,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react"; 
+import './DropBox.css'
 
 const DropBox = () => {
   const list = [
@@ -119,7 +120,7 @@ const DropBox = () => {
             {!drop.split && `Contact Us`}
             </button>
             <div></div>
-            <div className={`dropdown-menu ${drop.display}`}>
+            <div className={`dropdown-menu ${drop.display} ${drop.style}`}>
               {list.map((item, index) => {
                 return (
                   <a
