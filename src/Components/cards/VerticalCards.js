@@ -1,3 +1,4 @@
+import React from 'react'
 const Cards = () => {
   return (
     <div className="container my-5">

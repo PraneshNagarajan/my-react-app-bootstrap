@@ -1,3 +1,4 @@
+import React from 'react'
 import DropBox from "../dropbox/DropBox";
 
 const Jumbotron = () => {

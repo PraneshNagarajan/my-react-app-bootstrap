@@ -1,3 +1,4 @@
+import React from 'react'
 import Navbar from "../Components/navbar/Navbar";
 import Carousel from '../Components/carousel/Carousel'
 const AboutPage = (props) => {

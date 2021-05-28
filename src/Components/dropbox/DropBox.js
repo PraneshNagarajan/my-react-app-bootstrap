@@ -6,7 +6,7 @@ import {
   faSkype,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react"; 
+import React, { useState } from "react"; 
 import './DropBox.css'
 
 const DropBox = () => {

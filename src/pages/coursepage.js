@@ -1,3 +1,4 @@
+import React from 'react'
 import Breadcumb from "../Components/breadcrumb/BreadCrumb";
 import VerticalCards from "../Components/cards/VerticalCards";
 import Navbar from "../Components/navbar/Navbar";
