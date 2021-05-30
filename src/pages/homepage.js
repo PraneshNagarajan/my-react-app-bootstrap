@@ -4,6 +4,7 @@ import Jumbotron from "../Components/jumbotron/Jumbotron";
 import Table from "../Components/table/Table"
 import Accordion from '../Components/accordion/Accordion'
 import Navtabs from '../Components/navtabs/NavTabs'
+import ProgressBar from '../Components/progressbar/ProgressBar';
 const Home = (props) => {
     const setPage = (value) => {
             props.page(value)
@@ -12,6 +13,7 @@ const Home = (props) => {
     <div>
       <Navbar mainpage="home"  page={setPage}></Navbar>
       <Jumbotron></Jumbotron>
+      <ProgressBar/>
       <Navtabs/>
       <Table/>
       <Accordion/>
