@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage'
 import RegistrationPage from './pages/RegistrationPage'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
-  const [page, setPage] = useState(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)
+  const [page, setPage] = useState(<LoginPage  page={(e) => onPageHandler(e)} ></LoginPage>)
   const onPageHandler = (value) =>{
     if( value === 'home') {
       setPage(<HomePage page={(e) => onPageHandler(e)}> </HomePage>)
