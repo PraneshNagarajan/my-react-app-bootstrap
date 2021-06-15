@@ -1,0 +1,11 @@
+.dropup {
+inset: auto auto 0px 0px !important;
+}
+
+.dropend {
+    inset: auto auto auto 0px !important
+}
+
+.dropstart {
+    inset:  0px 0px auto auto !important;
+}

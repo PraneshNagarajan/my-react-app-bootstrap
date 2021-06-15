@@ -1,0 +1,14 @@
+.spinner {
+    position: absolute;
+    inset: 0 auto 0 auto;
+    z-index: 1;
+    width: 100%;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    size: 50%;
+}
+
+.spinner-border{
+    height: 5rem !important;
+    width: 5rem !important;
+}
